@@ -5,10 +5,7 @@ import com.jsoftware.api.interfaces.IQuestionFactory;
 import com.jsoftware.api.interfaces.IQuestionSet;
 import com.jsoftware.api.model.QuestionFactory;
 import com.jsoftware.api.model.QuestionSet;
-
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class TestMaker {
