@@ -32,15 +32,16 @@ public class TestMaker {
                     test.add(newQuestion);
                     break;
                 case 2:
-                    IQuestion tOFQuestion = buildTrueFalseQuestion(input, questionFactory);
-                    test.add(tOFQuestion);
+                    IQuestion trueOfFalse = buildTrueFalseQuestion(input, questionFactory);
+                    test.add(trueOfFalse);
                     break;
                 case 3:
                     IQuestion fillInTheBlanks= buildFillInTheBlankQuestion(input, questionFactory);
                     test.add(fillInTheBlanks);
                     break;
                 case 4:
-                    // short answer question
+                    IQuestion shortAnswer = buildShortAnswerQuestion(input, questionFactory);
+                    test.add(shortAnswer);
                     break;
                 case 5:
                     // remove a question
@@ -111,17 +112,18 @@ public class TestMaker {
 
         System.out.println("What is the answer? Please separate answers with a comma.");
         String fillInBlankAnswers = input.next();
+        String[] answers = fillInBlankAnswers.split(",");
 
-        return questionFactory.makeFillInBlank(question, );
+        return questionFactory.makeFillInBlank(question, answers);
     }
 
-    public static IQuestion buildShortAnswerQuestion(Scanner input, IQuestionFactory questionFactory) {
+   public static IQuestion buildShortAnswerQuestion(Scanner input, IQuestionFactory questionFactory) {
 
         System.out.println("What is your short answer question?");
         String question = input.next() + input.nextLine();
 
         System.out.println("How many keywords does your short answer question have?");
-        int numberOfKeywords = input.nextInt();
+        String[] keywords = new String[10];
 
         return questionFactory.makeShortAnswer(question, keywords);
     }
