@@ -123,8 +123,13 @@ public class TestMaker {
         String question = input.next() + input.nextLine();
 
         System.out.println("How many keywords does your short answer question have?");
-        String[] keywords = new String[10];
+        int keywords = Integer.parseInt(input.nextLine());
 
-        return questionFactory.makeShortAnswer(question, keywords);
+        String arrayOfKeywords[] = new String[keywords];
+        for (int i = 0; i < arrayOfKeywords.length; i++) {
+            System.out.print("What is a keyword in your short answer question?" + " : ");
+            arrayOfKeywords[i] = input.nextLine();
+        }
+        return questionFactory.makeShortAnswer(question, arrayOfKeywords);
     }
 }
