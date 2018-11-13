@@ -18,10 +18,14 @@ public class TestTaker {
         logger("Your choice: ");
         int wholeOrSampleTest = input.nextInt();
 
-        if (wholeOrSampleTest == 1) {
-            wholeTest();
-        } else {
-            sampleTest();
+        try {
+            if (wholeOrSampleTest == 1) {
+                wholeTest();
+            } else {
+                sampleTest();
+            }
+        } catch (Exception e) {
+            log("invalid response - please enter either 1 for whole Test or 2 for sample test");
         }
     }
 
@@ -29,14 +33,12 @@ public class TestTaker {
         log("----------------------------\n" +
                 "The test starts now!\n" +
                 "----------------------------");
-
     }
 
     public static void sampleTest() {
         log("----------------------------\n" +
                 "The test starts now!\n" +
                 "----------------------------");
-        
     }
 
     public static void log(String m) {
