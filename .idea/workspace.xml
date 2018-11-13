@@ -4,12 +4,6 @@
     <list default="true" id="2158fa56-7ff6-4d17-985d-151e385f8291" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Main/src/com/jsoftware/api/TestMaker.java" beforeDir="false" afterPath="$PROJECT_DIR$/Main/src/com/jsoftware/api/TestMaker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main/src/com/jsoftware/api/interfaces/IFillInBlanksQuestion.java" beforeDir="false" afterPath="$PROJECT_DIR$/Main/src/com/jsoftware/api/interfaces/IFillInBlanksQuestion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main/src/com/jsoftware/api/interfaces/IQuestion.java" beforeDir="false" afterPath="$PROJECT_DIR$/Main/src/com/jsoftware/api/interfaces/IQuestion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main/src/com/jsoftware/api/interfaces/IQuestionSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/Main/src/com/jsoftware/api/interfaces/IQuestionSet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main/src/com/jsoftware/api/model/FillInBlanksQuestion.java" beforeDir="false" afterPath="$PROJECT_DIR$/Main/src/com/jsoftware/api/model/FillInBlanksQuestion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main/src/com/jsoftware/api/model/QuestionFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/Main/src/com/jsoftware/api/model/QuestionFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main/src/com/jsoftware/api/model/QuestionSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/Main/src/com/jsoftware/api/model/QuestionSet.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -92,32 +86,34 @@
     <session id="-503418287">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
+          <entry key="project.closed" value="3" />
           <entry key="project.open.time.0" value="2" />
-          <entry key="project.opened" value="2" />
+          <entry key="project.open.time.10" value="1" />
+          <entry key="project.open.time.11" value="1" />
+          <entry key="project.opened" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="34" />
+          <entry key="java" value="35" />
           <entry key="md" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="34" />
+          <entry key="JAVA" value="35" />
           <entry key="Markdown" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="880" />
+          <entry key="java" value="1195" />
           <entry key="md" value="494" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="880" />
+          <entry key="JAVA" value="1195" />
           <entry key="Markdown" value="494" />
         </counts>
       </usages-collector>
@@ -125,26 +121,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Main/src/com/jsoftware/api/TestMaker.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="71" column="42" selection-start-line="71" selection-start-column="42" selection-end-line="71" selection-end-column="42" />
+            <state relative-caret-position="285">
+              <caret line="19" column="26" lean-forward="true" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#5290#5291#0" expanded="true" />
+                <element signature="e#5327#5328#0" expanded="true" />
+                <element signature="e#5210#5211#0" expanded="true" />
+                <element signature="e#5243#5244#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="135">
-                <caret line="9" column="24" lean-forward="true" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
-              </first_editor>
-              <second_editor />
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Main/src/com/jsoftware/api/TestTaker.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="10" selection-start-line="10" selection-end-line="12" selection-end-column="5" />
+              <folding>
+                <element signature="e#310#311#0" expanded="true" />
+                <element signature="e#344#345#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -192,7 +193,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Main/src/com/jsoftware/api/model/QuestionFactory.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
+            <state relative-caret-position="75">
               <caret line="9" column="34" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -205,7 +206,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Main/src/com/jsoftware/api/model/QuestionSet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
+            <state relative-caret-position="60">
               <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -280,6 +281,7 @@
         <option value="$PROJECT_DIR$/Main/src/com/jsoftware/api/model/QuestionSet.java" />
         <option value="$PROJECT_DIR$/Main/src/com/jsoftware/api/interfaces/IShortAnswerQuestion.java" />
         <option value="$PROJECT_DIR$/Main/src/com/jsoftware/api/model/QuestionFactory.java" />
+        <option value="$PROJECT_DIR$/Main/src/com/jsoftware/api/TestTaker.java" />
         <option value="$PROJECT_DIR$/Main/src/com/jsoftware/api/TestMaker.java" />
       </list>
     </option>
@@ -357,15 +359,15 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///Users/justin/dev/java2-learning-abstractmethods-interfaces/Main/src/com/jsoftware/api/interfaces/IMultipleChoiceQuestion.java" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541821229644" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542124809583" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -430,18 +432,20 @@
       <workItem from="1541824711558" duration="1021000" />
       <workItem from="1541827603936" duration="1818000" />
       <workItem from="1541857486236" duration="5713000" />
-      <workItem from="1541998327625" duration="136000" />
+      <workItem from="1541998327625" duration="345000" />
+      <workItem from="1542080953574" duration="7000" />
+      <workItem from="1542123914196" duration="831000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33691000" />
+    <option name="totallyTimeSpent" value="34738000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="822" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27110156" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27825466" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -450,7 +454,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.057534248" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.13972603" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.15479451" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -552,16 +556,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Main/src/com/jsoftware/api/TestMaker.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="71" column="42" selection-start-line="71" selection-start-column="42" selection-end-line="71" selection-end-column="42" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Main/src/com/jsoftware/api/interfaces/IQuestionSet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
@@ -603,7 +597,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Main/src/com/jsoftware/api/model/QuestionFactory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
+        <state relative-caret-position="75">
           <caret line="9" column="34" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -614,7 +608,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Main/src/com/jsoftware/api/model/QuestionSet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
+        <state relative-caret-position="60">
           <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -640,9 +634,34 @@
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="135">
-            <caret line="9" column="24" lean-forward="true" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
+            <caret line="9" column="24" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Main/src/com/jsoftware/api/TestTaker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" selection-start-line="10" selection-end-line="12" selection-end-column="5" />
+          <folding>
+            <element signature="e#310#311#0" expanded="true" />
+            <element signature="e#344#345#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Main/src/com/jsoftware/api/TestMaker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="26" lean-forward="true" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#5290#5291#0" expanded="true" />
+            <element signature="e#5327#5328#0" expanded="true" />
+            <element signature="e#5210#5211#0" expanded="true" />
+            <element signature="e#5243#5244#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
