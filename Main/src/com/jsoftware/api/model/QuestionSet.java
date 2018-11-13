@@ -3,12 +3,8 @@ package com.jsoftware.api.model;
 import com.jsoftware.api.interfaces.IQuestion;
 import com.jsoftware.api.interfaces.IQuestionSet;
 
-public class QuestionSet implements IQuestionSet{
-
-
-    public QuestionSet() {
-
-    }
+public class QuestionSet implements IQuestionSet {
+    public QuestionSet() { }
 
     public IQuestionSet emptyTestSet() {
         return null;

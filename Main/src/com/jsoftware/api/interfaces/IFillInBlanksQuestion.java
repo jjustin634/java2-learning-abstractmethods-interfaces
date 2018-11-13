@@ -4,8 +4,6 @@ public interface IFillInBlanksQuestion extends IQuestion {
 	public boolean checkAnswer(String[] keywords);
 }
 
-
-
 /**
  * A fill in the blank question may contain multiple blanks.
  * Each blank must match each answer.

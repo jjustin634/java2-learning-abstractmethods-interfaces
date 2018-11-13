@@ -9,7 +9,6 @@ import java.io.IOException;
 public class QuestionFactory implements IQuestionFactory {
     private String questionPrefix;
 
-
     public QuestionFactory(String questionPrefix) {
         this.questionPrefix = questionPrefix;
     }
@@ -17,7 +16,6 @@ public class QuestionFactory implements IQuestionFactory {
     public IQuestion makeMultipleChoice(String question, String[] choices, int answer) {
         return null;
     }
-
 
     public IQuestion makeTrueFalse(String question, boolean answer) {
         return null;

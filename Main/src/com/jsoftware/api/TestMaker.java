@@ -44,7 +44,7 @@ public class TestMaker {
                     test.add(shortAnswer);
                     break;
                 case 5:
-                    // remove a question
+                    // Remove a question from the test
                     break;
                 case 6:
                     displayExit();

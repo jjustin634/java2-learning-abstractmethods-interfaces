@@ -1,13 +1,21 @@
 package com.jsoftware.api.model;
 
-public class FillInBlanksQuestion {
+import com.jsoftware.api.interfaces.IFillInBlanksQuestion;
 
+public abstract class FillInBlanksQuestion implements IFillInBlanksQuestion {
+    private String question;
+    private String[] answers;
 
-
-
-    public boolean checkAnswer(String[] keywords) {
-
-        return true;
+    public FillInBlanksQuestion (String question, String[] answers) {
+        this.question = question;
+        this.answers = answers;
     }
 
+    public boolean checkAnswer(String[] keywords) {
+        if (answers == keywords) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

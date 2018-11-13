@@ -22,7 +22,6 @@ public interface IQuestionSet {
 	public boolean add(IQuestion question);
 	
 	/**
-	 * 
 	 * @param index Remove question using index
 	 * @return  true if index is valid
 	 */
