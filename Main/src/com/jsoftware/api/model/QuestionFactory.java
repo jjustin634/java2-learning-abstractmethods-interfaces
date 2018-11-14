@@ -14,23 +14,23 @@ public class QuestionFactory implements IQuestionFactory {
     }
 
     public IQuestion makeMultipleChoice(String question, String[] choices, int answer) {
-        return null;
+        return makeMultipleChoice(question,choices,answer);
     }
 
     public IQuestion makeTrueFalse(String question, boolean answer) {
-        return null;
+        return makeTrueFalse(question,answer);
     }
 
     public IQuestion makeFillInBlank(String question, String [] answers) {
-        return null;
+        return makeFillInBlank(question,answers);
     }
 
     public IQuestion makeShortAnswer(String question, String[] keywords) {
-        return null;
+        return makeShortAnswer(question,keywords);
     }
 
     public IQuestionSet load(String filename) throws IOException {
-        return null;
+        return makeEmptyQuestionSet();
     }
 
     public boolean save(IQuestionSet testSet, String filename) {
@@ -38,7 +38,7 @@ public class QuestionFactory implements IQuestionFactory {
     }
 
     public IQuestionSet makeEmptyQuestionSet() {
-        return null;
+        return makeEmptyQuestionSet();
     }
 
 }
