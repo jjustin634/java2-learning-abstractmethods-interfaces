@@ -4,6 +4,9 @@ import com.jsoftware.api.interfaces.IQuestion;
 import com.jsoftware.api.interfaces.IQuestionSet;
 
 public class QuestionSet implements IQuestionSet {
+
+    private IQuestion question;
+
     public QuestionSet() { }
 
     public IQuestionSet emptyTestSet() {
@@ -23,7 +26,7 @@ public class QuestionSet implements IQuestionSet {
     }
 
     public IQuestion getQuestion(int index) {
-        return null;
+        return getQuestion(index);
     }
 
     public int size() {
