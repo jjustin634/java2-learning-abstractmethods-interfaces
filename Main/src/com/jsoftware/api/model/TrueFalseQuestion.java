@@ -11,7 +11,6 @@ public class TrueFalseQuestion {
 
     public boolean checkAnswer(boolean answer) {
         return this.correctAnswer == answer;
-
     }
 
 }
