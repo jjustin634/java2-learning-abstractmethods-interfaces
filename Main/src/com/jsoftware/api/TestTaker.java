@@ -33,6 +33,7 @@ public class TestTaker {
         log("----------------------------\n" +
                 "The test starts now!\n" +
                 "----------------------------");
+
     }
 
     public static void sampleTest() {
