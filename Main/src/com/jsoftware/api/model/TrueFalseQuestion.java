@@ -1,6 +1,8 @@
 package com.jsoftware.api.model;
 
-public class TrueFalseQuestion {
+import com.jsoftware.api.interfaces.ITrueFalseQuestion;
+
+public abstract class TrueFalseQuestion implements ITrueFalseQuestion {
     private String question;
     private boolean correctAnswer;
 
