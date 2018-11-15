@@ -12,7 +12,10 @@ public abstract class TrueFalseQuestion implements ITrueFalseQuestion {
     }
 
     public boolean checkAnswer(boolean answer) {
-        return this.correctAnswer == answer;
+        if (this.correctAnswer == answer) {
+            return true;
+        } else {
+            return false;
+        }
     }
-
 }
