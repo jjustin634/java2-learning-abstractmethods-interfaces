@@ -17,7 +17,7 @@ public class TestMaker {
         String testName = input.next();
 
         boolean isRunning = true;
-        while(isRunning) {
+        while (isRunning) {
             int mode;
 
             displayMenu();
@@ -28,7 +28,7 @@ public class TestMaker {
             mode = input.nextInt();
             switch (mode) {
                 case 1:
-                    IQuestion newQuestion = buildMultipleChoiceQuestion(input, questionFactory);
+                    IQuestion newQuestion = buildMultipleChoiceQuestion(questionFactory);
                     test.add(newQuestion);
                     break;
                 case 2:
@@ -36,7 +36,7 @@ public class TestMaker {
                     test.add(trueOfFalse);
                     break;
                 case 3:
-                    IQuestion fillInTheBlanks= buildFillInTheBlankQuestion(input, questionFactory);
+                    IQuestion fillInTheBlanks = buildFillInTheBlankQuestion(input, questionFactory);
                     test.add(fillInTheBlanks);
                     break;
                 case 4:
@@ -44,21 +44,26 @@ public class TestMaker {
                     test.add(shortAnswer);
                     break;
                 case 5:
+                    // test.remove(mode);
                     // Remove a question from the test
                     break;
                 case 6:
-                    displayExit();
+                    displayExit(questionFactory, test, testName);
                     isRunning = false;
                     break;
                 default:
+                    log("\nInvalid input\n" +
+                            "Please enter one of the following\n");
                     break;
             }
         }
     }
 
-    private static void displayExit() {
+
+    private static void displayExit(IQuestionFactory questionFactory, IQuestionSet test, String filename) {
         log("\nTest saved.\n" +
                 "Goodbye!");
+        questionFactory.save(test, filename);
     }
 
     private static void displayMenu() {
@@ -72,10 +77,11 @@ public class TestMaker {
         logger("Your choice: ");
     }
 
-    public static IQuestion buildMultipleChoiceQuestion(Scanner input, IQuestionFactory questionFactory) {
+    public static IQuestion buildMultipleChoiceQuestion(IQuestionFactory questionFactory) {
+        Scanner input = new Scanner(System.in);
         ArrayList<String> questions = new ArrayList<>();
         log("What is your multiple-choice question?");
-        String question = input.next() + input.nextLine();
+        String questionFromUser = input.next() + input.nextLine();
         log("");
 
         String[] ordinals = { "first", "second", "third", "fourth and last" };
@@ -90,8 +96,7 @@ public class TestMaker {
 
         String[] arr = new String[questions.size()];
         arr = questions.toArray(arr);
-
-        return questionFactory.makeMultipleChoice(question, arr, theAnswer);
+        return questionFactory.makeMultipleChoice(questionFromUser, arr, theAnswer);
     }
 
     public static IQuestion buildTrueFalseQuestion(Scanner input, IQuestionFactory questionFactory) {
