@@ -17,6 +17,5 @@ public abstract class MultipleChoiceQuestion implements IMultipleChoiceQuestion 
     public boolean checkAnswer(int index) {
         return this.correctAnswer == index;
      }
-
 }
 
