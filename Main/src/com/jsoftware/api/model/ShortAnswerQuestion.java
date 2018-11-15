@@ -14,7 +14,10 @@ public abstract class ShortAnswerQuestion implements IShortAnswerQuestion {
     }
 
     public boolean checkAnswer(String answer) {
-        return this.checkAnswer == answer;
+        if (this.checkAnswer == answer) {
+            return true;
+        } else {
+            return false;
+        }
     }
-
 }
