@@ -18,10 +18,12 @@ public class QuestionSet implements IQuestionSet {
     }
 
     public boolean add(IQuestion question) {
+        // serializable
         return true;
     }
 
     public boolean remove(int index) {
+        // serializable
         return true;
     }
 
