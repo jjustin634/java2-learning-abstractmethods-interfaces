@@ -14,7 +14,7 @@ public class QuestionFactory implements IQuestionFactory {
     }
 
     public IQuestion makeMultipleChoice(String question, String[] choices, int answer) {
-        return makeMultipleChoice(question,choices,answer);
+      return null;
     }
 
     public IQuestion makeTrueFalse(String question, boolean answer) {
@@ -40,5 +40,4 @@ public class QuestionFactory implements IQuestionFactory {
     public IQuestionSet makeEmptyQuestionSet() {
         return makeEmptyQuestionSet();
     }
-
 }
