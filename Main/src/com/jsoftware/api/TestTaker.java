@@ -14,6 +14,7 @@ public class TestTaker {
         // use the load method to load the test the user created
         log("Test loaded successful!");
 
+
         log("Enter 1 to take a whole test or 2 to take a sample test.");
         logger("Your choice: ");
         int wholeOrSampleTest = input.nextInt();
@@ -33,6 +34,7 @@ public class TestTaker {
         log("----------------------------\n" +
                 "The test starts now!\n" +
                 "----------------------------");
+        log("Question 1 of 4");
 
     }
 
