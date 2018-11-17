@@ -11,7 +11,6 @@ import java.util.Scanner;
 public class TestMaker {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-
         log("Welcome to the TestMaker program!");
         log("What would you like to call this test?");
         String testName = input.next();
@@ -44,8 +43,7 @@ public class TestMaker {
                     test.add(shortAnswer);
                     break;
                 case 5:
-                    // test.remove(mode);
-                    // Remove a question from the test
+                    // remove a question
                     break;
                 case 6:
                     displayExit(questionFactory, test, testName);
@@ -58,7 +56,6 @@ public class TestMaker {
             }
         }
     }
-
 
     private static void displayExit(IQuestionFactory questionFactory, IQuestionSet test, String filename) {
         log("\nTest saved.\n" +
@@ -122,27 +119,4 @@ public class TestMaker {
         return questionFactory.makeFillInBlank(question, answers);
     }
 
-   public static IQuestion buildShortAnswerQuestion(Scanner input, IQuestionFactory questionFactory) {
-
-        log("What is your short answer question?");
-        String question = input.next() + input.nextLine();
-
-        log("How many keywords does your short answer question have?");
-        int keywords = Integer.parseInt(input.nextLine());
-
-        String arrayOfKeywords[] = new String[keywords];
-        for (int i = 0; i < arrayOfKeywords.length; i++) {
-            logger("What is a keyword in your short answer question?" + " : ");
-            arrayOfKeywords[i] = input.nextLine();
-        }
-        return questionFactory.makeShortAnswer(question, arrayOfKeywords);
-    }
-
-    public static void log(String m) {
-        System.out.println(m);
-    }
-
-    public static void logger(String m) {
-        System.out.print(m);
-    }
 }
