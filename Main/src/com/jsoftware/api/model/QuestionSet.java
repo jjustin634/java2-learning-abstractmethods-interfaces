@@ -4,34 +4,52 @@ import com.jsoftware.api.interfaces.IQuestion;
 import com.jsoftware.api.interfaces.IQuestionSet;
 
 public class QuestionSet implements IQuestionSet {
-
     private IQuestion question;
+    private int size;
 
-    public QuestionSet() { }
+    public QuestionSet(IQuestion question, int size) {
+        this.question = question;
+        this.size = size;
+    }
 
     public IQuestionSet emptyTestSet() {
-        return null;
+        IQuestionSet newTest = new QuestionSet(question,size);
+        return newTest;
     }
 
     public IQuestionSet randomSample(int size) {
-        return null;
+        IQuestionSet randomTest = new QuestionSet(question, size);
+        randomTest.getQuestion(size);
+        return randomTest;
     }
 
     public boolean add(IQuestion question) {
-        // serializable
-        return true;
+        question.getQuestion();
+        if (question == this.question) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public boolean remove(int index) {
-        // serializable
-        return true;
+        question.getQuestion();
+        if (question == this.question) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public IQuestion getQuestion(int index) {
-        return getQuestion(index);
+        if (question.equals(index)) {
+            return question;
+        } else {
+            return null;
+        }
     }
 
     public int size() {
-        return 1;
+        return this.size;
     }
 }
