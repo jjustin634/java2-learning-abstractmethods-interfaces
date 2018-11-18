@@ -1,23 +1,26 @@
 package com.jsoftware.api.model;
 
 import com.jsoftware.api.interfaces.IShortAnswerQuestion;
+import java.util.ArrayList;
 
-public abstract class ShortAnswerQuestion implements IShortAnswerQuestion {
+public class ShortAnswerQuestion implements IShortAnswerQuestion {
     private String question;
-    private String[] correctAnswers;
-    private String checkAnswer;
+    private ArrayList<String> keywords;
 
-    public ShortAnswerQuestion(String question, String[] correctAnswers, String checkAnswer) {
+    public ShortAnswerQuestion(String question, String[] keywords) {
         this.question = question;
-        this.correctAnswers = correctAnswers;
-        this.checkAnswer = checkAnswer;
+
+        this.keywords = new ArrayList<>();
+        for (String word : keywords) {
+            this.keywords.add(word);
+        }
     }
 
     public boolean checkAnswer(String answer) {
-        if (this.checkAnswer == answer) {
-            return true;
-        } else {
-            return false;
-        }
+        return this.keywords.contains(answer);
+    }
+
+    public String getQuestion() {
+        return this.question;
     }
 }
