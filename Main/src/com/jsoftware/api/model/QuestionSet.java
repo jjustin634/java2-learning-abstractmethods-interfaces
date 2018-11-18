@@ -3,53 +3,36 @@ package com.jsoftware.api.model;
 import com.jsoftware.api.interfaces.IQuestion;
 import com.jsoftware.api.interfaces.IQuestionSet;
 
-public class QuestionSet implements IQuestionSet {
-    private IQuestion question;
-    private int size;
+import java.util.ArrayList;
 
-    public QuestionSet(IQuestion question, int size) {
-        this.question = question;
-        this.size = size;
+public class QuestionSet implements IQuestionSet {
+    private ArrayList<IQuestion> questions;
+
+    public QuestionSet() {
+        this.questions = new ArrayList<>();
     }
 
     public IQuestionSet emptyTestSet() {
-        IQuestionSet newTest = new QuestionSet(question,size);
-        return newTest;
+        return new QuestionSet();
     }
 
     public IQuestionSet randomSample(int size) {
-        IQuestionSet randomTest = new QuestionSet(question, size);
-        randomTest.getQuestion(size);
-        return randomTest;
+        return null;
     }
 
     public boolean add(IQuestion question) {
-        question.getQuestion();
-        if (question == this.question) {
-            return true;
-        } else {
-            return false;
-        }
+        return this.questions.add(question);
     }
 
     public boolean remove(int index) {
-        question.getQuestion();
-        if (question == this.question) {
-            return true;
-        } else {
-            return false;
-        }
+       return this.questions.remove(index) != null;
     }
 
     public IQuestion getQuestion(int index) {
-        if (question.equals(index)) {
-            return question;
-        } else {
-            return null;
-        }
+        return this.questions.get(index);
     }
 
     public int size() {
-        return this.size;
+        return this.questions.size();
     }
 }
