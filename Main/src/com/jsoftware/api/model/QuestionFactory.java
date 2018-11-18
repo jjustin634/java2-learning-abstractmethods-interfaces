@@ -4,49 +4,30 @@ import com.jsoftware.api.interfaces.IQuestion;
 import com.jsoftware.api.interfaces.IQuestionSet;
 import com.jsoftware.api.interfaces.IQuestionFactory;
 import java.io.IOException;
-import java.util.Scanner;
 
 public class QuestionFactory implements IQuestionFactory {
     private String testName;
-    private IQuestion question;
-    private int size;
 
-    public QuestionFactory(String testName, IQuestion question, int size) {
-        this.testName = testName;
-        this.question = question;
-        this.size = size;
-    }
+    public QuestionFactory() {  }
 
     public IQuestion makeMultipleChoice(String question, String[] choices, int answer) {
-        return null;
+        return new MultipleChoiceQuestion(question, choices, answer);
     }
 
     public IQuestion makeTrueFalse(String question, boolean answer) {
-        return null;
+        return new TrueFalseQuestion(question, answer);
     }
 
     public IQuestion makeFillInBlank(String question, String [] answers) {
-        return null;
+        return new FillInBlanksQuestion(question, answers);
     }
 
     public IQuestion makeShortAnswer(String question, String[] keywords) {
-        Scanner input = new Scanner(System.in);
-        log("What is your short answer question?");
-        question = input.next() + input.nextLine();
-
-        log("How many keywords does your short answer question have?");
-        int key = Integer.parseInt(input.nextLine());
-
-        String arrayOfKeywords[] = new String[key];
-        for (int i = 0; i < arrayOfKeywords.length; i++) {
-            logger("What is a keyword in your short answer question?" + " : ");
-            arrayOfKeywords[i] = input.nextLine();
-        }
-        return IQuestion(question);
+        return new ShortAnswerQuestion(question, keywords);
     }
 
     public IQuestionSet load(String filename) throws IOException {
-        return new QuestionSet(question, size);
+        return new QuestionSet();
     }
 
     public boolean save(IQuestionSet testSet, String filename) {
@@ -58,15 +39,7 @@ public class QuestionFactory implements IQuestionFactory {
     }
 
     public IQuestionSet makeEmptyQuestionSet() {
-        IQuestionSet emptySet = new QuestionSet(question, size);
+        IQuestionSet emptySet = new QuestionSet();
         return emptySet;
-    }
-
-    public static void log(String m) {
-        System.out.println(m);
-    }
-
-    public static void logger(String m) {
-        System.out.print(m);
     }
 }
