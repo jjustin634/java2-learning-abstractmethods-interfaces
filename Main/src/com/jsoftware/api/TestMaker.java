@@ -5,11 +5,12 @@ import com.jsoftware.api.interfaces.IQuestionFactory;
 import com.jsoftware.api.interfaces.IQuestionSet;
 import com.jsoftware.api.model.QuestionFactory;
 import com.jsoftware.api.model.QuestionSet;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class TestMaker {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         Scanner input = new Scanner(System.in);
         log("Welcome to the TestMaker program!");
         log("What would you like to call this test?");
@@ -21,7 +22,7 @@ public class TestMaker {
 
             displayMenu();
 
-            IQuestionFactory questionFactory = new QuestionFactory(testName);
+            IQuestionFactory questionFactory = new QuestionFactory();
             IQuestionSet test = new QuestionSet();
 
             mode = input.nextInt();
@@ -43,7 +44,7 @@ public class TestMaker {
                     test.add(shortAnswer);
                     break;
                 case 5:
-                    // remove a question
+                    removeQuestion(input, questionFactory, testName);
                     break;
                 case 6:
                     displayExit(questionFactory, test, testName);
@@ -117,6 +118,48 @@ public class TestMaker {
         String[] answers = fillInBlankAnswers.split(",");
 
         return questionFactory.makeFillInBlank(question, answers);
+    }
+
+    public static IQuestion buildShortAnswerQuestion(Scanner input, IQuestionFactory questionFactory) {
+        log("What is your short answer question?");
+        String question = input.next() + input.nextLine();
+
+        log("How many keywords does your short answer question have?");
+        int key = Integer.parseInt(input.nextLine());
+
+        String arrayOfKeywords[] = new String[key];
+        for (int i = 0; i < arrayOfKeywords.length; i++) {
+            logger("What is a keyword in your short answer question?" + " : ");
+            arrayOfKeywords[i] = input.nextLine();
+        }
+        return questionFactory.makeShortAnswer(question, arrayOfKeywords);
+    }
+
+    public static IQuestion removeQuestion(Scanner input, IQuestionFactory questionFactory, String filename) throws IOException {
+
+        printQuestions(filename, questionFactory);
+
+        log("Select the index of the question you would like to remove.");
+        int removedIndex = input.nextInt();
+
+        IQuestionSet questionSet = questionFactory.load(filename);
+        questionSet.getQuestion(removedIndex);
+
+        return null;
+    }
+
+    public static IQuestionSet printQuestions(String filename, IQuestionFactory questionFactory) throws IOException {
+        questionFactory.load(filename);
+
+        // add the questions
+    }
+
+    public static void log(String m) {
+        System.out.println(m);
+    }
+
+    public static void logger(String m) {
+        System.out.print(m);
     }
 
 }
