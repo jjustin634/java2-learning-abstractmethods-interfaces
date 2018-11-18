@@ -1,5 +1,5 @@
 package com.jsoftware.api.interfaces;
 
-public interface  IQuestion {
+public interface IQuestion {
 	String getQuestion();
 }
