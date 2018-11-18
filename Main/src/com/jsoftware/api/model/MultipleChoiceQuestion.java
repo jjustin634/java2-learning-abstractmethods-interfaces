@@ -2,7 +2,7 @@ package com.jsoftware.api.model;
 
 import com.jsoftware.api.interfaces.IMultipleChoiceQuestion;
 
-public abstract class MultipleChoiceQuestion implements IMultipleChoiceQuestion {
+public class MultipleChoiceQuestion implements IMultipleChoiceQuestion {
     private String question;
     private String[] answers;
     private int correctAnswer;
@@ -17,5 +17,9 @@ public abstract class MultipleChoiceQuestion implements IMultipleChoiceQuestion 
     public boolean checkAnswer(int index) {
         return this.correctAnswer == index;
      }
+
+    public String getQuestion() {
+        return this.question;
+    }
 }
 
