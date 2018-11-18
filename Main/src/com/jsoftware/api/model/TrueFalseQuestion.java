@@ -2,7 +2,7 @@ package com.jsoftware.api.model;
 
 import com.jsoftware.api.interfaces.ITrueFalseQuestion;
 
-public abstract class TrueFalseQuestion implements ITrueFalseQuestion {
+public class TrueFalseQuestion implements ITrueFalseQuestion {
     private String question;
     private boolean correctAnswer;
 
@@ -17,5 +17,8 @@ public abstract class TrueFalseQuestion implements ITrueFalseQuestion {
         } else {
             return false;
         }
+    }
+    public String getQuestion() {
+        return this.question;
     }
 }
