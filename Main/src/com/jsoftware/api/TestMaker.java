@@ -135,7 +135,7 @@ public class TestMaker {
         return questionFactory.makeShortAnswer(question, arrayOfKeywords);
     }
 
-    public static IQuestion removeQuestion(Scanner input, IQuestionFactory questionFactory, String filename) throws IOException {
+    public static IQuestionSet removeQuestion(Scanner input, IQuestionFactory questionFactory, String filename) throws IOException {
 
         printQuestions(filename, questionFactory);
 
@@ -145,13 +145,11 @@ public class TestMaker {
         IQuestionSet questionSet = questionFactory.load(filename);
         questionSet.getQuestion(removedIndex);
 
-        return null;
+        return questionSet;
     }
 
     public static IQuestionSet printQuestions(String filename, IQuestionFactory questionFactory) throws IOException {
-        questionFactory.load(filename);
-
-        // add the questions
+        return null;
     }
 
     public static void log(String m) {
