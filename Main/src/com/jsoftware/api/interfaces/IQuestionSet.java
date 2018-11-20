@@ -1,10 +1,10 @@
 package com.jsoftware.api.interfaces;
 
 public interface IQuestionSet {
-	public IQuestionSet emptyTestSet();
-	public IQuestionSet randomSample(int size);
-	public boolean add(IQuestion question);
-	public boolean remove(int index);
-	public IQuestion getQuestion(int index);
-	public int size();
+	IQuestionSet randomSample(int size);
+	boolean add(IQuestion question);
+	boolean remove(int index);
+	IQuestion getQuestion(int index);
+	int size();
+	void print();
 }
