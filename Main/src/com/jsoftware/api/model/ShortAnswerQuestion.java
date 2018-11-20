@@ -1,9 +1,11 @@
 package com.jsoftware.api.model;
 
 import com.jsoftware.api.interfaces.IShortAnswerQuestion;
+import java.io.Serializable;
 import java.util.ArrayList;
+import static com.jsoftware.api.model.Logger.log;
 
-public class ShortAnswerQuestion implements IShortAnswerQuestion {
+public class ShortAnswerQuestion implements IShortAnswerQuestion, Serializable {
     private String question;
     private ArrayList<String> keywords;
 
@@ -23,4 +25,10 @@ public class ShortAnswerQuestion implements IShortAnswerQuestion {
     public String getQuestion() {
         return this.question;
     }
+
+    public void print() {
+        log(this.question);
+    }
 }
+
+
