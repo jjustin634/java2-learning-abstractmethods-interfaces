@@ -3,11 +3,9 @@ package com.jsoftware.api.model;
 import com.jsoftware.api.interfaces.IQuestion;
 import com.jsoftware.api.interfaces.IQuestionSet;
 import com.jsoftware.api.interfaces.IQuestionFactory;
-import java.io.IOException;
+import java.io.*;
 
 public class QuestionFactory implements IQuestionFactory {
-    private String testName;
-
     public QuestionFactory() {  }
 
     public IQuestion makeMultipleChoice(String question, String[] choices, int answer) {
@@ -27,19 +25,38 @@ public class QuestionFactory implements IQuestionFactory {
     }
 
     public IQuestionSet load(String filename) throws IOException {
-        return new QuestionSet();
+        IQuestionSet test = null;
+        try {
+            FileInputStream file = new FileInputStream(filename);
+            ObjectInputStream in = new ObjectInputStream(file);
+
+            test = (QuestionSet) in.readObject();
+
+            in.close();
+            file.close();
+            System.out.println("Test loaded successful!");
+        } catch (Exception e) {
+            System.out.println("Test could not be loaded.");
+        }
+
+        return test;
     }
 
-    public boolean save(IQuestionSet testSet, String filename) {
-        if (this.testName == filename) {
+    public boolean save(IQuestionSet test, String filename) {
+        try {
+            FileOutputStream file = new FileOutputStream(filename);
+            ObjectOutputStream out = new ObjectOutputStream(file);
+
+            out.writeObject(test);
+
+            out.close();
+            file.close();
+
+            System.out.println("Test saved.");
             return true;
-        } else {
+        } catch (IOException e) {
+            System.out.println("Test could not be saved.");
             return false;
         }
-    }
-
-    public IQuestionSet makeEmptyQuestionSet() {
-        IQuestionSet emptySet = new QuestionSet();
-        return emptySet;
     }
 }
