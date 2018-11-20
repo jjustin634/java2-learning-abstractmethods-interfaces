@@ -1,8 +1,10 @@
 package com.jsoftware.api.model;
 
 import com.jsoftware.api.interfaces.ITrueFalseQuestion;
+import java.io.Serializable;
+import static com.jsoftware.api.model.Logger.log;
 
-public class TrueFalseQuestion implements ITrueFalseQuestion {
+public class TrueFalseQuestion implements ITrueFalseQuestion, Serializable {
     private String question;
     private boolean correctAnswer;
 
@@ -20,5 +22,9 @@ public class TrueFalseQuestion implements ITrueFalseQuestion {
     }
     public String getQuestion() {
         return this.question;
+    }
+
+    public void print() {
+        log(this.question + " True/False?");
     }
 }
