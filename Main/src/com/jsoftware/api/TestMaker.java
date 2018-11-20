@@ -5,49 +5,45 @@ import com.jsoftware.api.interfaces.IQuestionFactory;
 import com.jsoftware.api.interfaces.IQuestionSet;
 import com.jsoftware.api.model.QuestionFactory;
 import com.jsoftware.api.model.QuestionSet;
-import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Scanner;
+import static com.jsoftware.api.model.Logger.log;
 
 public class TestMaker {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         log("Welcome to the TestMaker program!");
         log("What would you like to call this test?");
-        String testName = input.next();
+        String name = input.next();
+
+        IQuestionSet test = new QuestionSet();
+        IQuestionFactory questionFactory = new QuestionFactory();
 
         boolean isRunning = true;
+
         while (isRunning) {
             int mode;
 
             displayMenu();
 
-            IQuestionFactory questionFactory = new QuestionFactory();
-            IQuestionSet test = new QuestionSet();
-
             mode = input.nextInt();
             switch (mode) {
                 case 1:
-                    IQuestion newQuestion = buildMultipleChoiceQuestion(questionFactory);
-                    test.add(newQuestion);
+                    test.add(buildMultipleChoiceQuestion(input, questionFactory));
                     break;
                 case 2:
-                    IQuestion trueOfFalse = buildTrueFalseQuestion(input, questionFactory);
-                    test.add(trueOfFalse);
+                    test.add(buildTrueFalseQuestion(input, questionFactory));
                     break;
                 case 3:
-                    IQuestion fillInTheBlanks = buildFillInTheBlankQuestion(input, questionFactory);
-                    test.add(fillInTheBlanks);
+                    test.add(buildFillInTheBlankQuestion(input, questionFactory));
                     break;
                 case 4:
-                    IQuestion shortAnswer = buildShortAnswerQuestion(input, questionFactory);
-                    test.add(shortAnswer);
+                    test.add(buildShortAnswerQuestion(input, questionFactory));
                     break;
                 case 5:
-                    removeQuestion(input, questionFactory, testName);
+                    removeQuestion(input, test);
                     break;
                 case 6:
-                    displayExit(questionFactory, test, testName);
+                    exit(questionFactory, test, name);
                     isRunning = false;
                     break;
                 default:
@@ -58,106 +54,86 @@ public class TestMaker {
         }
     }
 
-    private static void displayExit(IQuestionFactory questionFactory, IQuestionSet test, String filename) {
-        log("\nTest saved.\n" +
-                "Goodbye!");
+    private static void exit(IQuestionFactory questionFactory, IQuestionSet test, String filename) {
         questionFactory.save(test, filename);
+        log("Goodbye!");
     }
 
     private static void displayMenu() {
         log("What would you like to do?");
-        log("\t 1) add a multiple-choice question");
-        log("\t 2) add a true/false question");
-        log("\t 3) add a fill-in-the-blank question");
-        log("\t 4) add short answer question");
-        log("\t 5) remove a question");
-        log("\t 6) exit program");
-        logger("Your choice: ");
+        log("\t1) add a multiple-choice question");
+        log("\t2) add a true/false question");
+        log("\t3) add a fill-in-the-blank question");
+        log("\t4) add short answer question");
+        log("\t5) remove a question");
+        log("\t6) exit program");
+        log("Your choice: ", true);
     }
 
-    public static IQuestion buildMultipleChoiceQuestion(IQuestionFactory questionFactory) {
-        Scanner input = new Scanner(System.in);
-        ArrayList<String> questions = new ArrayList<>();
+    public static IQuestion buildMultipleChoiceQuestion(Scanner input, IQuestionFactory questionFactory) {
         log("What is your multiple-choice question?");
-        String questionFromUser = input.next() + input.nextLine();
+        String questionText = input.next() + input.nextLine();
         log("");
 
         String[] ordinals = { "first", "second", "third", "fourth and last" };
-        String[] answers = new String[4];
+        String[] possibleAnswers = new String[4];
+
         for (int i = 0; i < 4; i++) {
-            logger("Please enter your " + ordinals[i] + " choice: ");
-            answers[i] = input.next();
+            log("Please enter your " + ordinals[i] + " choice: ", true);
+            possibleAnswers[i] = input.next();
         }
         log("What choice was the answer? (Enter #1-4): ");
-        int i = input.nextInt();
-        int theAnswer = i - 1;
 
-        String[] arr = new String[questions.size()];
-        arr = questions.toArray(arr);
-        return questionFactory.makeMultipleChoice(questionFromUser, arr, theAnswer);
+        int i = input.nextInt();
+        int correctAnswer = i - 1;
+
+        return questionFactory.makeMultipleChoice(questionText, possibleAnswers, correctAnswer);
     }
 
     public static IQuestion buildTrueFalseQuestion(Scanner input, IQuestionFactory questionFactory) {
-
         log("What is your True/False question?");
-        String question = input.next() + input.nextLine();
+        String questionText = input.next() + input.nextLine();
 
         log("What is the answer? (Please enter exactly true or false)");
-        boolean theAnswer = input.nextBoolean();
+        boolean answer = input.nextBoolean();
 
-        return questionFactory.makeTrueFalse(question, theAnswer);
+        return questionFactory.makeTrueFalse(questionText, answer);
     }
 
     public static IQuestion buildFillInTheBlankQuestion(Scanner input, IQuestionFactory questionFactory) {
-
         log("What is your fill in the blank question?");
-        String question = input.next() + input.nextLine();
+        String questionText = input.next() + input.nextLine();
 
         log("What is the answer? Please separate answers with a comma.");
-        String fillInBlankAnswers = input.next();
-        String[] answers = fillInBlankAnswers.split(",");
+        String answerList = input.next();
 
-        return questionFactory.makeFillInBlank(question, answers);
+        String[] keywords = answerList.split(",");
+
+        return questionFactory.makeFillInBlank(questionText, keywords);
     }
 
     public static IQuestion buildShortAnswerQuestion(Scanner input, IQuestionFactory questionFactory) {
         log("What is your short answer question?");
-        String question = input.next() + input.nextLine();
+        String questionText = input.next() + input.nextLine();
 
-        log("How many keywords does your short answer question have?");
+        log("How many keywords does your short answer question have? ");
+
         int key = Integer.parseInt(input.nextLine());
 
-        String arrayOfKeywords[] = new String[key];
-        for (int i = 0; i < arrayOfKeywords.length; i++) {
-            logger("What is a keyword in your short answer question?" + " : ");
-            arrayOfKeywords[i] = input.nextLine();
+        String keywords[] = new String[key];
+
+        for (int i = 0; i < keywords.length; i++) {
+            log("What is a keyword in your short answer question?", true);
+            keywords[i] = input.nextLine();
         }
-        return questionFactory.makeShortAnswer(question, arrayOfKeywords);
+
+        return questionFactory.makeShortAnswer(questionText, keywords);
     }
 
-    public static IQuestionSet removeQuestion(Scanner input, IQuestionFactory questionFactory, String filename) throws IOException {
-
-        printQuestions(filename, questionFactory);
-
+    public static void removeQuestion(Scanner input, IQuestionSet test) {
         log("Select the index of the question you would like to remove.");
-        int removedIndex = input.nextInt();
-
-        IQuestionSet questionSet = questionFactory.load(filename);
-        questionSet.getQuestion(removedIndex);
-
-        return questionSet;
+        test.print();
+        int i = input.nextInt();
+        test.remove(i);
     }
-
-    public static IQuestionSet printQuestions(String filename, IQuestionFactory questionFactory) throws IOException {
-        return null;
-    }
-
-    public static void log(String m) {
-        System.out.println(m);
-    }
-
-    public static void logger(String m) {
-        System.out.print(m);
-    }
-
 }
