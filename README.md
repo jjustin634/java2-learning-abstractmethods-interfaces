@@ -23,3 +23,5 @@ Running program with .jar file in terminal
 * `cd artifacts/`
 * `java -jar java2Project3_jar/java2Project3.jar`
 
+### Example of Creating a Test
+<img width="441" alt="Screen Shot 2019-05-07 at 8 57 48 AM" src="https://user-images.githubusercontent.com/23105078/57305180-3f46d700-70a6-11e9-9078-cd96b3c0558a.png">
