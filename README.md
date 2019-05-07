@@ -28,3 +28,5 @@ Running program with .jar file in terminal
 * `cd out/`
 * `cd artifacts/`
 * `java -jar atmMachine_jar/atmMachine.jar`
+
+<img width="361" alt="Screen Shot 2019-05-07 at 8 45 43 AM" src="https://user-images.githubusercontent.com/23105078/57304207-87fd9080-70a4-11e9-8a8f-92cfa577eed5.png">
